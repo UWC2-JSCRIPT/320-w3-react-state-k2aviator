@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import './bnbs.css';
 import star from './star.svg';
 import heart from './heart.svg';
@@ -14,11 +14,9 @@ function RenderBnb({bnbs}) {
   const [cartBnbs,setCartBnbs] = useState([])
   const [itemPrice,setItemDetails] = useState('')
   const [heartClass,setHeartClass] = useState('')
-  //console.log(bnbs)
 
-  
-  //NEXT - figure out how to update the cart in the below function
-  // filter and then use set state to filter
+
+
   const removeFromCart = (bnb,index)=> {
     console.log("this index", index)
     const newArr = cartBnbs.filter((cartBnb)=>{
@@ -31,6 +29,7 @@ function RenderBnb({bnbs}) {
     console.log("new array is ",newArr) 
     console.log("cart bnbs ",cartBnbs) 
   }
+
 
   const toggleHeart = ({index}) => {
     let heartImages = document.querySelectorAll(".bnbHeart")
@@ -96,5 +95,10 @@ function RenderBnb({bnbs}) {
     </div>
   );
 }
-//
+
+RenderBnb.propTypes = {
+  bnbs: PropTypes.array,
+}
+
+
 export default RenderBnb;
