@@ -1,5 +1,5 @@
 import React from 'react';
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import './bnbs.css';
 
 function ShoppingCart({cartBnbs, removeFromCart}) {
@@ -36,5 +36,10 @@ function ShoppingCart({cartBnbs, removeFromCart}) {
 
 
 }
-//
+
+ShoppingCart.propTypes = {
+  cartBnbs: PropTypes.array,
+  removeFromCart: PropTypes.func
+}
+
 export default ShoppingCart;
